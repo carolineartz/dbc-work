@@ -21,7 +21,8 @@ end
 #3. Write a linear_search method that searches the student array for a student name
 # and returns the position of that student if they are in the array.
 
-#4. Write a bubble_sort method that sorts the array of students by first_name.
+
+#4. Write a bubble_sort method that sorts the array of students by name.
 
 
 
