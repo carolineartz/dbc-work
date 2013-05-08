@@ -2,10 +2,10 @@ class Student
 
   attr_accessor :scores, :name
 
-  def initialize(args)
-    @name=args[:name]
-    @scores=args[:scores]
+  def initialize(args)   #Use Named Arguments!
+    #your code here
   end
+
   
 end
 
