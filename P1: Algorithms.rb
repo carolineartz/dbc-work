@@ -11,7 +11,7 @@ end
 
 ## ADD YOUR CODE HERE and IN THE CLASS ABOVE
 
-#1. Create an array of 10 Students each with 5 test scores between 0 and 100.  
+#1. Create an array of 5 Students each with 5 test scores between 0 and 100.  
 # The first Student should be named "Alex" with scores [100,100,100,0,100]
 
 
@@ -33,7 +33,7 @@ end
 
 p students[0].name == "Alex"
 p students[0].scores.length ==5
-p students[0].scores[0]==student[0].scores[4]
+p students[0].scores[0]==students[0].scores[4]
 p students[0].scores[3]==0
 
 
@@ -58,11 +58,3 @@ p students[0].scores[0]==100
 p students[0].name <= students[1].name
 p students[2].name <= students[3].name
 p students[3].name <= students[4].name
-
-
-
-
-
-
-
-
