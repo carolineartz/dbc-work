@@ -22,9 +22,6 @@ end
 # and returns the position of that student if they are in the array.
 
 
-#4. Write a bubble_sort method that sorts the array of students by name.
-
-
 
 
 #===========DRIVER CODE : DO NOT MODIFY =======
@@ -48,14 +45,3 @@ p students[0].letter_grade == 'B'
 p linear_search(students,"Alex")==0
 p linear_search(students, "NOT A STUDENT")==-1
 
-#Tests for part 4
-bubble_sort(students)
-
-# The first student should still be Alex
-p students[0].name == "Alex"
-p students[0].scores[0]==100
-
-# The students should be in order by name
-p students[0].name <= students[1].name
-p students[2].name <= students[3].name
-p students[3].name <= students[4].name
