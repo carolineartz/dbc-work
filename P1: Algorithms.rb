@@ -1,12 +1,9 @@
 class Student
+  attr_accessor :scores, :first_name
 
-  attr_accessor :scores, :name
-
-  def initialize(args)   #Use Named Arguments!
+  def initialize(args)   #Use named arguments!
     #your code here
   end
-
-  
 end
 
 ## ADD YOUR CODE HERE and IN THE CLASS ABOVE
@@ -29,10 +26,10 @@ end
 #Make sure these tests pass
 # Tests for part 1:
 
-p students[0].name == "Alex"
-p students[0].scores.length ==5
-p students[0].scores[0]==students[0].scores[4]
-p students[0].scores[3]==0
+p students[0].first_name == "Alex"
+p students[0].scores.length == 5
+p students[0].scores[0] == students[0].scores[4]
+p students[0].scores[3] == 0
 
 
 # Tests for part 2
@@ -42,6 +39,6 @@ p students[0].letter_grade == 'B'
 
 # Tests for part 3
 
-p linear_search(students,"Alex")==0
-p linear_search(students, "NOT A STUDENT")==-1
+p linear_search(students, "Alex") == 0
+p linear_search(students, "NOT A STUDENT") == -1
 
