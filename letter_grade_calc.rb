@@ -2,7 +2,6 @@
 # Please write your pseudocode here and keep it commented
 # INPUT:
 # OUPUT:
-#
 # What are the steps to solve the problem?  Write them out in plain english as best you can.
 #
 #
