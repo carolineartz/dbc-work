@@ -1,30 +1,169 @@
-## Overview
+class VirusPredictor
 
-1. Click the "Start" button above to go the exercise.
+  COUNTRIES = { "Alabama" => {population_density: 94.65, population: 4822023, region: 5, regional_spread: 3},
+                "Alaska" => {population_density: 1.26, population: 731449, region: 10, regional_spread: 9},
+                "Arizona" => {population_density: 57.05, population: 6553255, region: 8, regional_spread: 8},
+                "Arkansas" => {population_density: 56.43, population: 2949131, region: 7, regional_spread: 5},
+                "California" => {population_density: 244.2, population: 38041430, region: 9, regional_spread: 8},
+                "Colorado" => {population_density: 49.33, population: 5187582, region: 8, regional_spread: 6},
+                "Connecticut" => {population_density: 741.4, population: 3590347, region: 1, regional_spread: 2},
+                "Deleware" => {population_density: 470.7, population: 917092, region: 3, regional_spread: 2},
+                "Florida" => {population_density: 360.2, population: 19317568, region: 3, regional_spread: 5},
+                "Georgia" => {population_density: 172.5, population: 9919945, region: 3, regional_spread: 5},
+                "Hawaii" => {population_density: 216.8, population: 1392313, region: 11, regional_spread: 9},
+                "Idaho" => {population_density: 19.15, population: 1595728, region: 8, regional_spread: 9},
+                "Illinois" => {population_density: 231.9, population: 12875255, region: 4, regional_spread: 6},
+                "Indiana" => {population_density: 182.5, population: 6537334, region: 4, regional_spread: 5},
+                "Iowa" => {population_density: 54.81, population: 3074186, region: 6, regional_spread: 4},
+                "Kansas" => {population_density: 35.09, population: 2885905, region: 6, regional_spread: 7},
+                "Kentucky" => {population_density: 110.0, population: 4380415, region: 5, regional_spread: 4},
+                "Louisiana" => {population_density: 105.0, population: 4601893, region: 7, regional_spread: 5},
+                "Maine" => {population_density: 43.04, population: 1329192, region: 1, regional_spread: 2},
+                "Maryland" => {population_density: 606.2, population: 5884563, region: 3, regional_spread: 2},
+                "Massachusetts" => {population_density: 852.1, population: 6646144, region: 1, regional_spread: 2},
+                "Michigan" => {population_density: 174.8, population: 9883360, region: 4, regional_spread: 2},
+                "Minnesota" => {population_density: 67.14, population: 5379139, region: 6, regional_spread: 4},
+                "Mississippi" => {population_density: 63.50, population: 2984926, region: 5, regional_spread: 7},
+                "Missouri" => {population_density: 87.26, population: 6021988, region: 6, regional_spread: 4},
+                "Montana" => {population_density: 6.86, population: 1005141, region: 8, regional_spread: 9},
+                "Nebraska" => {population_density: 23.97, population: 1855525, region: 6, regional_spread: 8},
+                "Nevada" => {population_density: 24.8, population: 2758931, region: 8, regional_spread: 9},
+                "New Hampshire" => {population_density: 147.0, population: 1320718, region: 1, region: 1, regional_spread: 2},
+                "New Jersey" => {population_density: 1205, population: 8864590, region: 2, regional_spread: 3},
+                "New Mexico" => {population_density: 17.16, population: 2085538, region: 8, regional_spread: 7},
+                "New York" => {population_density: 415.3, population: 19570261, region: 2, regional_spread: 1},
+                "North Carolina" => {population_density: 200.6, population: 9752073, region: 3, regional_spread: 5},
+                "North Dakota" => {population_density: 9.92, population: 699628, region: 6, regional_spread: 8},
+                "Ohio" => {population_density: 282.5, population: 11544225, region: 4, regional_spread: 2},
+                "Oklahoma" => {population_density: 55.22, population: 3814820, region: 7, regional_spread: 6},
+                "Oregon" => {population_density: 40.33, population: 3899353, region: 9, regional_spread: 8},
+                "Pennsylvania" => {population_density: 285.3, population: 12763536, region: 2, regional_spread: 3},
+                "Rhode Island" => {population_density: 1016, population: 1050292, region: 1, regional_spread: 2},
+                "South Carolina" => {population_density: 157.1, population: 4723723, region: 3, regional_spread: 5},
+                "South Dakota" => {population_density: 10.86, population: 833354, region: 6, regional_spread: 8},
+                "Tennessee" => {population_density: 156.6, population: 6456243, region: 5, regional_spread: 3},
+                "Texas" => {population_density: 98.07, population: 26059203, region: 7, regional_spread: 3},
+                "Utah" => {population_density: 34.3, population: 2855287, region: 8, regional_spread: 9},
+                "Vermont" => {population_density: 67.73, population: 626011, region: 1, regional_spread: 2},
+                "Virginia" => {population_density: 207.3, population: 8185867, region: 3, regional_spread: 2},
+                "Washington" => {population_density: 102.6, population: 6724540, region: 9, regional_spread: 8},
+                "Washington,D.C."=> {population_density: 10357, population: 632323, region: 3, regional_spread: 2},
+                "West Virginia" => {population_density: 77.06, population: 1855413, region: 3, regional_spread: 4},
+                "Wisconsin" => {population_density: 105.2, population: 5726398, region: 4, regional_spread: 6},
+                "Wyoming" => {population_density: 5.851, population: 576412, region: 8, regional_spread: 6}
+              }
+                #population density is number of people per square mile as of 2012
 
-2. Open this hangout to collaborate with other students.
-<a href="https://plus.google.com/hangouts/_/event/cn84s0i6f761j9rpv4a3ljddg0o?authuser=1&hl=en" target="_blank">Google Hangout</a>
+  def initialize(state_of_origin)
+    state = state_of_origin
 
-3. Follow the objectives below and update your gist for each one.  Use "Edit this gist" link that appeared after you clicked the "Start" button.
+    raise ArgumentError.new("This location is not supported by this program. Please enter a state in the U.S.") if !COUNTRIES.has_key?(state)
 
-## Background
-The C.D.C. (Centers for Disease Control) is concerned about a recent form of deadly influenza. They've implemented the following program to predict the effect of the virus by state. Eventually they want to predict the spread of the virus, which is why that data is included.
+    virus_effects(state)
 
-The initial program is not very D.R.Y., but the program designer went on vacation and your boss needs the model to work efficiently so researchers can use it. You've been brought in to make the code more efficient and expandable for later features such as incorporating demographic data. 
+  end
 
+  def virus_effects(state)
+    population = COUNTRIES[state][:population]
+    population_density = COUNTRIES[state][:population_density]
+    region = COUNTRIES[state][:region]
+    next_region = COUNTRIES[state][:regional_spread]
+    state = state
 
-##Objectives
+    predicted_deaths(population_density, population, state)
 
-1. Understand what each line of code is doing. Take notes and put comments in.
-2.  Clean up the code. Replace bad variable names and make the code D.R.Y.
-3.  Ensure the code has the same output.
-4.  You will see two different syntaxes for hashes in this code, as well as nested hashes. Identify the two syntaxes and explain how they are different.
-5.  Research SCOPE so you can identify the constant. What is a constant? When is it useful? 
-6.  _BONUS:_ See if you can get the results for all the states by making one new instance of the VirusPredictor and calculate the total number of deaths from this outbreak.
+  end
 
-## Review and Reflect
-Take a moment to peruse other solutions to the challenge.  There may be some really interesting implementations.
+  def predicted_deaths(population_density, population, state)
+    if population_density >= 200
+      number_of_deaths = (population * 0.4).floor
+    elsif population_density >= 150
+      number_of_deaths = (population * 0.3).floor
+    elsif population_density >= 100
+      number_of_deaths = (population * 0.2).floor
+    elsif population_density >= 50
+      number_of_deaths = (population * 0.1).floor
+    else 
+      number_of_deaths = (population * 0.05).floor
+    end
 
-Could your code be improved by implementing some new tricks?  Or better naming?  Is there a smarter or more efficient way to do the same thing? Also think about features you would want to add to this code and consider the ways to do that.
+    print "#{state} will lose #{number_of_deaths} people in this outbreak"
 
-Take a moment to comment on other students' code.  Do you have a tip?  Or gratitude for a novel solution?  Share the coding love!
+    speed_of_spread(population_density, state)
+
+  end
+
+  def speed_of_spread(population_density, state) #in months
+    speed = 0.0
+
+    if population_density >= 200
+      speed += 0.5
+    elsif population_density >= 150
+      speed += 1
+    elsif population_density >= 100
+      speed += 1.5
+    elsif population_density >= 50
+      speed += 2
+    else 
+      speed += 2.5
+    end
+
+    puts "and will spread across the state in #{speed} months.\n\n"
+
+  end
+
+end
+
+#=======================================================================
+
+VirusPredictor.new("Alabama")
+VirusPredictor.new("Alaska")
+VirusPredictor.new("Arizona")
+VirusPredictor.new("Arkansas")
+VirusPredictor.new("California")
+VirusPredictor.new("Colorado")
+VirusPredictor.new("Connecticut")
+VirusPredictor.new("Deleware")
+VirusPredictor.new("Florida")
+VirusPredictor.new("Georgia")
+VirusPredictor.new("Hawaii")
+VirusPredictor.new("Idaho")
+VirusPredictor.new("Illinois")
+VirusPredictor.new("Indiana")
+VirusPredictor.new("Iowa")
+VirusPredictor.new("Kansas")
+VirusPredictor.new("Kentucky")
+VirusPredictor.new("Louisiana")
+VirusPredictor.new("Maine")
+VirusPredictor.new("Maryland")
+VirusPredictor.new("Massachusetts")
+VirusPredictor.new("Michigan")
+VirusPredictor.new("Minnesota")
+VirusPredictor.new("Mississippi")
+VirusPredictor.new("Missouri")
+VirusPredictor.new("Montana")
+VirusPredictor.new("Nebraska")
+VirusPredictor.new("Nevada")
+VirusPredictor.new("New Hampshire")
+VirusPredictor.new("New Jersey")
+VirusPredictor.new("New Mexico")
+VirusPredictor.new("New York")
+VirusPredictor.new("North Carolina")
+VirusPredictor.new("Ohio")
+VirusPredictor.new("Oklahoma")
+VirusPredictor.new("Oregon")
+VirusPredictor.new("Pennsylvania")
+VirusPredictor.new("Rhode Island")
+VirusPredictor.new("South Carolina")
+VirusPredictor.new("South Dakota")
+VirusPredictor.new("Tennessee")
+VirusPredictor.new("Texas")
+VirusPredictor.new("Utah")
+VirusPredictor.new("Vermont")
+VirusPredictor.new("Virginia")
+VirusPredictor.new("Washington")
+VirusPredictor.new("Washington,D.C.")
+VirusPredictor.new("West Virginia")
+VirusPredictor.new("Wisconsin")
+VirusPredictor.new("Wyoming")
+VirusPredictor.new("alabama")
