@@ -1,14 +1,3 @@
-# We want you to: 
-#  1. Make the code D.R.Y.
-#  2. Use regular expressions wherever they make sense.
-#  3. Make the code easy to read.
-#  4. Make it flexible and easy to modify in case the cipher changes.
-#  5. Write driver code so you know it's working with simple true and false statements 
-
-
-# Stretch: Write the cipher method to encrypt english sentences.
-
-
 def north_korean_cipher(coded_message)
   input = coded_message.downcase.split("")
   decoded_sentence = []
