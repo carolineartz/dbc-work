@@ -25,8 +25,9 @@
 
 
 # REVIEW/REFLECT
-# Reflection is vital to learning and growth. These challenges should not be thought of as items to check off; 
-# they are your opportunities to learn and grow as a programmer. Use the following questions to reflect on this challenge.
+# Reflection is vital to learning and growth. These challenges should not be thought of as items 
+# to check off;  they are your opportunities to learn and grow as a programmer. 
+# Use the following questions to reflect on this challenge.
 # Was your strategy for solving the challenge successful?
 # What part of your strategy worked? What parts were challenging?
 # What questions did you have while coding? Did you find answers to them?
