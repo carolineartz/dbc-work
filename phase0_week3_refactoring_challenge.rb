@@ -166,3 +166,4 @@ VirusPredictor.new("Washington,D.C.")
 VirusPredictor.new("West Virginia")
 VirusPredictor.new("Wisconsin")
 VirusPredictor.new("Wyoming")
+VirusPredictor.new("alabama") #=> This should raise an argument error because it is not in the hash...
