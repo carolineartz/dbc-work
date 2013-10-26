@@ -108,7 +108,7 @@ class VirusPredictor
       speed += 2.5
     end
 
-    puts "and will spread across the state in #{speed} months.\n\n"
+    puts " and will spread across the state in #{speed} months.\n\n"
 
   end
 
@@ -166,4 +166,3 @@ VirusPredictor.new("Washington,D.C.")
 VirusPredictor.new("West Virginia")
 VirusPredictor.new("Wisconsin")
 VirusPredictor.new("Wyoming")
-VirusPredictor.new("alabama")
