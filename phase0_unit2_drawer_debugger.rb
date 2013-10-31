@@ -2,7 +2,7 @@ class Drawer
 
 attr_reader :contents
 
-# are there any more methods needed in this class?
+# Are there any more methods needed in this class?
 
 def initialize
 @contents = []
@@ -21,7 +21,7 @@ def add_item
 @contents << item
 end
 
-def remove_item(item = @contents.pop) 
+def remove_item(item = @contents.pop) #what is `#pop` doing?
 @contents.delete(item)
 end
 
@@ -38,16 +38,16 @@ end
 class Silverware
 attr_reader :type
 
-#are there any more methods needed in this class?
+# Are there any more methods needed in this class?
 
-def initialize(type, washed = true)
+def initialize(type, clean = true)
 @type = type
-@washed = washed
+@clean = clean
 end
 
 def eat
 puts "eating with the #{type}"
-@washed = false
+@clean = false
 end
 
 end
@@ -78,11 +78,11 @@ silverware_drawer.dump
 silverware_drawer.view_contents #What should this return?
 
 
-fork = silverware_drawer.remove_item(fork)
+fork = silverware_drawer.remove_item(fork) #add some puts here or trace through the code...
 fork.eat
 
 #BONUS SECTION
-# puts fork.washed
+# puts fork.clean
 
 
 
