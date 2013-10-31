@@ -2,6 +2,8 @@ class Drawer
 
 attr_reader :contents
 
+# are there any more methods needed in this class?
+
 def initialize
 @contents = []
 @open = true
@@ -36,6 +38,8 @@ end
 class Silverware
 attr_reader :type
 
+#are there any more methods needed in this class?
+
 def initialize(type, washed = true)
 @type = type
 @washed = washed
@@ -45,6 +49,7 @@ def eat
 @washed = false
 puts "eating with the #{type}"
 end
+
 end
 
 knife1 = Silverware.new("knife")
