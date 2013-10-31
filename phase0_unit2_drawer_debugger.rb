@@ -46,8 +46,8 @@ def initialize(type, washed = true)
 end
 
 def eat
-@washed = false
 puts "eating with the #{type}"
+@washed = false
 end
 
 end
