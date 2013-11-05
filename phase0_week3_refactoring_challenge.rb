@@ -1,6 +1,62 @@
 class VirusPredictor
 
-  COUNTRIES = { "Alabama" => {population_density: 94.65, population: 4822023, region: 5, regional_spread: 3},
+  def initialize(state_of_origin, population_density, population, region, regional_spread)
+    @state = state_of_origin
+    @population = population
+    @population_density = population_density
+    @region = region
+    @next_region = regional_spread
+  end
+
+  def virus_effects
+    predicted_deaths(@population_density, @population, @state)
+    speed_of_spread(@population_density, @state)
+  end
+
+  private
+
+  def predicted_deaths(population_density, population, state)
+    if population_density >= 200
+      number_of_deaths = (population * 0.4).floor
+    elsif population_density >= 150
+      number_of_deaths = (population * 0.3).floor
+    elsif population_density >= 100
+      number_of_deaths = (population * 0.2).floor
+    elsif population_density >= 50
+      number_of_deaths = (population * 0.1).floor
+    else 
+      number_of_deaths = (population * 0.05).floor
+    end
+
+    print "#{state} will lose #{number_of_deaths} people in this outbreak"
+
+  end
+
+  def speed_of_spread(population_density, state) #in months
+    speed = 0.0
+
+    if population_density >= 200
+      speed += 0.5
+    elsif population_density >= 150
+      speed += 1
+    elsif population_density >= 100
+      speed += 1.5
+    elsif population_density >= 50
+      speed += 2
+    else 
+      speed += 2.5
+    end
+
+    puts " and will spread across the state in #{speed} months.\n\n"
+
+  end
+
+end
+
+#=======================================================================
+
+
+state_data = { "Alabama" => {population_density: 94.65, population: 4822023, region: 5, regional_spread: 3},
                 "Alaska" => {population_density: 1.26, population: 731449, region: 10, regional_spread: 9},
                 "Arizona" => {population_density: 57.05, population: 6553255, region: 8, regional_spread: 8},
                 "Arkansas" => {population_density: 56.43, population: 2949131, region: 7, regional_spread: 5},
@@ -54,116 +110,10 @@ class VirusPredictor
               }
                 #population density is number of people per square mile as of 2012
 
-  def initialize(state_of_origin)
-    state = state_of_origin
 
-    raise ArgumentError.new("This location is not supported by this program. Please enter a state in the U.S.") if !COUNTRIES.has_key?(state)
 
-    virus_effects(state)
-
-  end
-
-  def virus_effects(state)
-    population = COUNTRIES[state][:population]
-    population_density = COUNTRIES[state][:population_density]
-    region = COUNTRIES[state][:region]
-    next_region = COUNTRIES[state][:regional_spread]
-    state = state
-
-    predicted_deaths(population_density, population, state)
-
-  end
-
-  def predicted_deaths(population_density, population, state)
-    if population_density >= 200
-      number_of_deaths = (population * 0.4).floor
-    elsif population_density >= 150
-      number_of_deaths = (population * 0.3).floor
-    elsif population_density >= 100
-      number_of_deaths = (population * 0.2).floor
-    elsif population_density >= 50
-      number_of_deaths = (population * 0.1).floor
-    else 
-      number_of_deaths = (population * 0.05).floor
-    end
-
-    print "#{state} will lose #{number_of_deaths} people in this outbreak"
-
-    speed_of_spread(population_density, state)
-
-  end
-
-  def speed_of_spread(population_density, state) #in months
-    speed = 0.0
-
-    if population_density >= 200
-      speed += 0.5
-    elsif population_density >= 150
-      speed += 1
-    elsif population_density >= 100
-      speed += 1.5
-    elsif population_density >= 50
-      speed += 2
-    else 
-      speed += 2.5
-    end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
-
-  end
-
+# initialize VirusPredictor for each state
+state_data.each do |name, data|
+  state_predictor = VirusPredictor.new(name, data[:population_density], data[:population], data[:region], data[:regional_spread]) 
+  state_predictor.virus_effects
 end
-
-#=======================================================================
-
-VirusPredictor.new("Alabama")
-VirusPredictor.new("Alaska")
-VirusPredictor.new("Arizona")
-VirusPredictor.new("Arkansas")
-VirusPredictor.new("California")
-VirusPredictor.new("Colorado")
-VirusPredictor.new("Connecticut")
-VirusPredictor.new("Deleware")
-VirusPredictor.new("Florida")
-VirusPredictor.new("Georgia")
-VirusPredictor.new("Hawaii")
-VirusPredictor.new("Idaho")
-VirusPredictor.new("Illinois")
-VirusPredictor.new("Indiana")
-VirusPredictor.new("Iowa")
-VirusPredictor.new("Kansas")
-VirusPredictor.new("Kentucky")
-VirusPredictor.new("Louisiana")
-VirusPredictor.new("Maine")
-VirusPredictor.new("Maryland")
-VirusPredictor.new("Massachusetts")
-VirusPredictor.new("Michigan")
-VirusPredictor.new("Minnesota")
-VirusPredictor.new("Mississippi")
-VirusPredictor.new("Missouri")
-VirusPredictor.new("Montana")
-VirusPredictor.new("Nebraska")
-VirusPredictor.new("Nevada")
-VirusPredictor.new("New Hampshire")
-VirusPredictor.new("New Jersey")
-VirusPredictor.new("New Mexico")
-VirusPredictor.new("New York")
-VirusPredictor.new("North Carolina")
-VirusPredictor.new("Ohio")
-VirusPredictor.new("Oklahoma")
-VirusPredictor.new("Oregon")
-VirusPredictor.new("Pennsylvania")
-VirusPredictor.new("Rhode Island")
-VirusPredictor.new("South Carolina")
-VirusPredictor.new("South Dakota")
-VirusPredictor.new("Tennessee")
-VirusPredictor.new("Texas")
-VirusPredictor.new("Utah")
-VirusPredictor.new("Vermont")
-VirusPredictor.new("Virginia")
-VirusPredictor.new("Washington")
-VirusPredictor.new("Washington,D.C.")
-VirusPredictor.new("West Virginia")
-VirusPredictor.new("Wisconsin")
-VirusPredictor.new("Wyoming")
-VirusPredictor.new("alabama") #=> This should raise an argument error because it is not in the hash...
