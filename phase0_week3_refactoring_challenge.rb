@@ -1,4 +1,10 @@
-# LEARNING GOALS
+# When you are finished with this challenge you should be able to:
+
+# Explain what "require_relative" does and why you would use it
+# Demonstrate how to iterate through a hash
+# Easily recognize and refactor repetitive code
+
+# Objectives
 # 1) Run the code.  Look at the output.  Look at the input (it's in the other file).  Explain what the program is doing.
 # 2) Write a comment explaining the require_relative statement below
 # 3) Comment each method and define it's responsibility
