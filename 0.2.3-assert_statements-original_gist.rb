@@ -36,7 +36,8 @@ assert { name == "billybob" }
 
 
 #5) BONUS: INCLUDE A CUSTOM ERROR MESSAGE 
+#Your new assert method code and test code here:
+#
 
-# fibonacci_test.rb:21:in `assert': 66 is not a fibonacci (RuntimeError)
-# 	from fibonacci_test.rb:26:in `<main>'
+
 
