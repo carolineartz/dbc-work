@@ -13,17 +13,17 @@ For each bug (there are three initial bugs that cause interpreter errors), answe
 --- Bug 1 ---
 * what is the exact description of the error?
 * what is the exact line number the error is appearing?
-* before you fix the bug, what do you think is wrong?
+* before you fix the bug, what do you think is causing the error?
 
 --- Bug 2 ---
 * what is the exact description of the error?
 * what is the exact line number the error is appearing?
-* before you fix the bug, what do you think is wrong?
+* before you fix the bug, what do you think is causing the error?
 
 --- Bug 3 ---
 * what is the exact description of the error?
 * what is the exact line number the error is appearing?
-* before you fix the bug, what do you think is wrong?
+* before you fix the bug, what do you think is causing the error?
 
 
 ###3) Pass the tests 
