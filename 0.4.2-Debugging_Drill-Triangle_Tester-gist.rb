@@ -41,11 +41,12 @@ When you solve the error, describe what is happening as clearly as possible:
 * Write down the processes you followed that could be applied in other debugging situations.
 
 
-###5) Submit and review
+###5) Submit and Reflect 
 
-Review other solutions.
-* What was their approach? Did they have a step that could be particularly useful?
-* Add any insights to your gist to help distill your own process.
+Review other solutions and the canonical solution listed on the "Review and Reflect" tab.  
+
+Take a moment to reflect on the canonical solution and the solutions of other students. Add any insights to your gist to help distill your own process here:
+
 
 
 =end
