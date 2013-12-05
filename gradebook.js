@@ -18,7 +18,7 @@ var scores = [ [80, 70, 70, 100],
 
 /*
 
-Below you will find driver code. Run your code either from the command line using Node.js or 
+Below you will find driver code. Run the code in this file either from the command line using Node.js or 
 by pasting the code of this entire file into your browser console.  All tests will log 'true' 
 in the console when they pass--false, otherwise.
 
