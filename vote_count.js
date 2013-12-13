@@ -45,8 +45,9 @@ var voteCount = {
   treasurer: {}
 }
 
-/* The name of each student receiving a vote for an office should become a property of the respective 
-office in voteCount.  After Alex's votes have been tallied, voteCount would be ...
+/* The name of each student receiving a vote for an office should become a property 
+of the respective office in voteCount.  After Alex's votes have been tallied, 
+voteCount would be ...
 
   var voteCount = {
     president: { Bob: 1 },
@@ -58,7 +59,8 @@ office in voteCount.  After Alex's votes have been tallied, voteCount would be .
 */
 
 
-/* Once the votes have been tallied, assign each officer position the name of the student who received the most votes. */
+/* Once the votes have been tallied, assign each officer position the name of the 
+student who received the most votes. */
 var officers = {
   president: undefined,
   vicePresident: undefined,
