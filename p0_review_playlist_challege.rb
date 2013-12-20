@@ -30,3 +30,20 @@ my_playlist.remove(angels)
 p my_playlist.includes?(lying_from_you) == true
 my_playlist.play_all
 my_playlist.print
+
+
+
+
+### Put your Reflection here:
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
