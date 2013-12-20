@@ -23,10 +23,10 @@ my_playlist = Playlist.new(one_by_one = Song.new("One by One", "Sirenia"),
 
 lying_from_you = Song.new("Lying From You", "Linkin Park")
 angels = Song.new("Angels", "Within Temptation")
-
 my_playlist.add(lying_from_you, angels)
 p my_playlist.num_of_tracks == 5
+angels.play
 my_playlist.remove(angels)
-my_playlist.play_song(going_under)
 p my_playlist.includes?(lying_from_you) == true
+my_playlist.play_all
 my_playlist.print
