@@ -27,5 +27,6 @@ angels = Song.new("Angels", "Within Temptation")
 my_playlist.add(lying_from_you, angels)
 p my_playlist.num_of_tracks == 5
 my_playlist.remove(angels)
+my_playlist.play_song(going_under)
 p my_playlist.includes?(lying_from_you) == true
 my_playlist.print
