@@ -29,8 +29,8 @@ end
 ####################################REFACTORED CODE#################################
 
 def is_fibonacci?(i)
-  fibs = [1, 0] #start with array ordered 1 then 0 to account for fibs.last == 0 => true without affecting fibonacci sums
-  while i > fibs.last
+  fibs = [1, 0] #start with array ordered 1 then 0 to account for fibs.last == 0 => true 
+  while i > fibs.last                                   #without affecting fibonacci sums
     x, y = fibs.pop(2)  #pop off and assign vars x and y to the last two elementss of fibs array
     fibs.push(x, y, x + y)  #push those right back in the front followed by their sum
   end #looping until results in 3 element array where the final element must be i IFF i is fibonacci
@@ -52,4 +52,15 @@ p is_fibonacci?(0) == true
 
 ###################################REFLECTION#######################################
 
-# I spent a lot of time on this problem and the bonus fib method. I can see there are a lot of ways to solve this problem, some faster or more clear than others. I noticed that a lof of submitted solutions did not pass a test for returning true for testing if 0 is a fibonacci number (when random selection of fib number didn't sample `0`, rspecs wouldn't error). So, I was trying to find a good way to include 0. My first couple solutions to the probelm involed either a larger loop testing the condition at the start (initial code) or for my refactored code, initially I had an OR expression added in the return true to include the 0 case. Finally, I thought to reverse the initial array, effectively making 0 the last element in the array at the start without affecting the sums going forward. This way, the test for true if fib number is last number in the array will evaluate to true when i=0.
+# I spent a lot of time on this problem and the bonus fib method. I can see
+# there are a lot of ways to solve this problem, some faster or more clear than
+# others. I noticed that a lof of submitted solutions did not pass a test for
+# returning true for testing if 0 is a fibonacci number (when random selection
+# of fib number didn't sample `0`, rspecs wouldn't error). So, I was trying to
+# find a good way to include 0. My first couple solutions to the probelm involed
+# either a larger loop testing the condition at the start (initial code) or for
+# my refactored code, initially I had an OR expression added in the return true
+# to include the 0 case. Finally, I thought to reverse the initial array,
+# effectively making 0 the last element in the array at the start without
+# affecting the sums going forward. This way, the test for true if fib number is
+# last number in the array will evaluate to true when i=0.
