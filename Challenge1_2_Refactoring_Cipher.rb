@@ -120,9 +120,37 @@ def nk_cipher_encrypt(message, r=4)
     exaggerated.gsub(/\d+/) { |num| (num.to_i * 100).to_s }
 end
 
-#put my own message into nk_cipher_encrypt and validated output by decripting via north_korean_cipher
+#put my own message into nk_cipher_encrypt and validated output by decripting via
+#north_korean_cipher
 p nk_cipher_encrypt("how can we be expected to teach children how to read...if they can't even fit inside the building?") 
   #=> "lsa%ger%ai@fi%ibtigxih#xs@xiegl*glmphvir@lsa#xs@vieh...mj&xlic&ger'x#izir*jmx&mrwmhi&xli&fymphmrk?" 
 p north_korean_cipher("lsa%ger%ai@fi%ibtigxih#xs@xiegl*glmphvir@lsa#xs@vieh...mj&xlic&ger'x#izir*jmx&mrwmhi&xli&fymphmrk?") 
   #==> "how can we be expected to teach children how to read...if they can't even fit inside the building?"
 
+###################################REFLECTION#######################################
+
+# I spent a LOT of time on this problem-both in small groups, pairs, and alone. There are obviously
+# many ways to achieve the desired outcome, both more and less similiar to the oringinal code/logic.
+# I reviewed an article prior working on this challenge that clued me in on the #rotate Array and
+# #zip create Hash methods. This approach vastly simplified the task of creating the cipher and
+# allows for the inclusion of an (optional) rotation parameter and extend the utility of the
+# method/program in the event the shift changed from 4. The code struck me as more of a program than
+# a single method; it's quite long and is something that could definitely be made modular. For my
+# first refacoring, I split the cipher into two methods, one creating the actual cipher and the
+# other calling the cipher creation method and returning the decoded message.
+
+#FIRST REFACTOR: The biggest challenge I experienced during my first refactoring was the nested
+#conditionals and loops that test/match/push coded characters => decoded chars. I wanted to
+#implement a case statement, as it seemed like an approach that might simplify things and allow me
+#to remove some of those repetetive tests found match tests-it wasn't easy, but the logic eventually
+#became clear and I was able to satisfy the necessary conditions to push the original character into
+#the decoded message array ONLY AFTER exhaustive iteration over the cipher without a match.
+
+#SECOND REFACTOR: I was convinced there must be a much shorter and simplier approach to solving this
+#problem. After a helpful brainstorming session with some fellow boots, I found a somewhat related
+#article that supported the ideas we were playing with. I ran with the approach which doesn't
+#invovle creating a cipher hash and instead creates a single array of the alphabet characters a-z
+#two times (i.e., like : ['a', 'b', 'c'..'z', 'a', 'b', 'c'..'z']). Again using an optional rotation
+#parameter, defaulting to 4 for our purposes, I could join a string from the alphabet array at the
+#oppriate offset and usethe tr method to replace the alphabetical characters directly within the
+#coded_message string. Regex solves the additional substitution objectives relatively easily. Yay :)
