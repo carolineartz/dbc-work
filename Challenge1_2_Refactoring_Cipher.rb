@@ -115,7 +115,7 @@ def nk_cipher_encrypt(message, r=4)
     exaggerated = message.downcase.tr('a-z', alphas[r..26+r].join)
     
     while exaggerated =~ /\s/
-      exaggerated.sub!(/[^\w[:punct:]]/, sign[rand(6)])
+      exaggerated.sub!(/[^\w[:punct:]]/, sign[rand(7)])
     end
     exaggerated.gsub(/\d+/) { |num| (num.to_i * 100).to_s }
 end
