@@ -19,7 +19,7 @@ class Drawer
     @contents << item
   end
 
-  def remove_item(item = @contents.last) #removing the last item in the contents array
+  def remove_item(item = @contents.last) #default won't pop last item off until passes test for contains item
     raise ArgumentError.new('Hmmm..don\'t see one of those...') unless @contents.include?(item)
     @contents.delete(item)
   end
