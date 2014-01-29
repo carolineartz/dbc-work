@@ -14,7 +14,6 @@ def get_row(row)
   @boggle_board[row]
 end
 
-
 def get_col(col)
   @boggle_board.map {|row|  row[col]}
 end
