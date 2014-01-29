@@ -42,7 +42,7 @@ end
 
 
 class Silverware
-  attr_reader :type, :clean
+  attr_reader :type
 
   def initialize(type, clean = true)
     @type = type
