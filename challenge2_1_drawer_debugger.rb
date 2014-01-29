@@ -117,7 +117,6 @@ silverware_drawer.open ##opened the drawer
 silverware_drawer.add_item(fork)
 silverware_drawer.view_contents ##added fork, should have only a fork
 
-puts ''
 spork = Silverware.new('spork') #for testing argument error
 
 silverware_drawer.remove_item(spork) #raise argument error, can't remove item not in drawer
