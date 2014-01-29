@@ -1,5 +1,5 @@
 class Drawer
-  attr_reader :contents
+  #don't need attribute reader for content at this point
 
   def initialize
     @contents = []
