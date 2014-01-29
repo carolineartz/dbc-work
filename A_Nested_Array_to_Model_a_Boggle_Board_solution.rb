@@ -16,14 +16,13 @@ end
 
 
 def get_col(col)
-  @boggle_board.map {|row|  row[col]  }
+  @boggle_board.map {|row|  row[col]}
 end
 
 
 #1) Access multiple elements of a nested array
 puts create_word(@boggle_board, [2,2], [1,1], [2,1], [3,2], [3,3], [2,3])  #=> returns "locker"
 puts create_word(@boggle_board, [2,1], [3,1], [3,2], [3,3])  #=> returns "cake"
-
 
 # 2) Write a method that takes a row number and returns all the elements in the row.
 p get_row(0) #=>  ["b", "r", "a", "e"]
