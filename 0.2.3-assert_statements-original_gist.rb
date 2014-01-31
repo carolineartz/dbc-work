@@ -1,4 +1,3 @@
-
 #1) PASTE YOUR PREVIOUS IS_FIBONACCI? CODE HERE:
 
 
@@ -40,4 +39,7 @@ assert { name == "billybob" }
 #
 
 
-
+#6) Reflection
+# 
+# 
+# 
