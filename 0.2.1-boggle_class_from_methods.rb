@@ -5,8 +5,8 @@ class BoggleBoard
   end
 
 
-  def create_word(board, *coords)
-    coords.map { |coord| board[coord.first][coord.last]}.join('')
+  def create_word(*coords)
+    coords.map { |coord| @dice_grid[coord.first][coord.last]}.join('')
   end
 
 
@@ -40,7 +40,7 @@ dice_grid = [['b', 'r', 'a', 'e'],
 boggle_board = BoggleBoard.new(dice_grid)
 
 # implement tests for each of the methods here:
-puts boggle_board.create_word(dice_grid, [1,2], [1,1], [2,1], [3,2]) #=> dock
+puts boggle_board.create_word([1,2], [1,1], [2,1], [3,2]) #=> dock
 
 puts boggle_board.get_row(0).join('') #=> brae
 puts boggle_board.get_row(1).join('') #=> iodt
