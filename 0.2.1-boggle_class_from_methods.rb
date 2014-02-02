@@ -64,14 +64,17 @@ p boggle_board.get_row(3)[2] != 'r' #=>true
 
 
 # review & reflect
-# I think this is a good example of object-oriented design. But I've been trying to figure out why it specifically is
-# targeting the transition from procedural to OOP...at first I thought it was referencing our progression over the 
-# weeks, but I think that while limited, we have implemented object-oriented design prior to this challenge. We have 
-# been expected to program modularly--create classes and define its methods; construct objects as instances of those 
-# classes; calling methods on those objects, both inherited from the Object class and those we defined for that class
-# . But then I realized it was probably referring to the nested array methods challenge to the cohesive, 
-# modular BoggleBoard class, and it made a little more sense. Anyway, OOP might require "more code" at the start, 
-# but it enables and promotes code reuse with larger programs and significantly reduces the amount of code 
-# required- particularly when we begin moving toward inherited objects. If we wanted to play a second game of boggle,
-# it would be significantly easier to simply define a new dice_grid. I think OOP allows us to protect the inter 
-# workings and object definitions and define the interface to which objects interact with other objects. 
+
+# I think this is a good example of object-oriented design. But I've been trying to figure out why
+# it specifically is targeting the transition from procedural to OOP...at first I thought it was
+# referencing our progression over the  weeks, but I think that while limited, we have implemented
+# object-oriented design prior to this challenge. We have  been expected to program modularly--
+# create classes and define its methods; construct objects as instances of those  classes; calling
+# methods on those objects, both inherited from the Object class and those we defined for that class
+# . But then I realized it was probably referring to the nested array methods challenge to the
+# cohesive,  modular BoggleBoard class, and it made a little more sense. Anyway, OOP might require
+# "more code" at the start,  but it enables and promotes code reuse with larger programs and
+# significantly reduces the amount of code  required- particularly when we begin moving toward
+# inherited objects. If we wanted to play a second game of boggle, it would be significantly easier
+# to simply define a new dice_grid. I think OOP allows us to protect the inter  workings and object
+# definitions and define the interface to which objects interact with other objects.
