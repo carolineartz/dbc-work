@@ -47,7 +47,8 @@ print_lowest_grade_level_speakers
 
 # TODO (bonus)
 # Create a listing of all of the Politicians and the number of votes they recieved
-# output should look like:  Sen. John McCain - 7,323 votes
+# output should look like:  Sen. John McCain - 7,323 votes (This is an example, yours will not return this value, it should just 
+#    have a similar format)
 # Create a listing of each Politician and the voter that voted for them
 # output should include the senators name, then a long list of voters separated by a comma
 #
