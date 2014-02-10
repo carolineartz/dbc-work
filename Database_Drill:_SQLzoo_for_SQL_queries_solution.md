@@ -7,7 +7,6 @@ I do have prior experience with SQL but was stuck for quite a while on the final
 First, I had trouble distributing the scores correctly across the teams for each record--but I realized I should be using `SUM` and not `COUNT`. 
 
 Next, I could not figure out how to populate the records (rows/games) with a 0-0 tie. With a an `INNER JOIN` (default `JOIN` behavior), only when the joined field appears in both tables will the result table be populated with data. However, *there are different types of joins* and we needed the one where all *games* are populated, recardless of whether they appear in the table describing goals (because obviously games that result in a draw woudln't show up in the goals table). Remembering this, I went for a `LEFT JOIN`--including all items from my "left" table (games) and those that match on the joined feild from the "right" table (goal).
-
 ```sql
 SELECT m.mdate,
        m.team1,
@@ -19,9 +18,7 @@ GROUP BY m.id
 ORDER BY m.mdate, g.matchid, m.team1, m.team2
 ```
 . 
-###Types of Joins[1]
-[^1]:http://www.w3schools.com/sql/sql_join.asp
-
+###[Types of Joins](http://www.w3schools.com/sql/sql_join.asp)
 Wikipedia notes the ANSI-standard SQL specifies five types of `JOIN`: `INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`. We I leared SQL a couple years ago, we broke it down to four:
 
 **INNER JOIN**: Returns all rows when there is at least one match in BOTH tables<br />
