@@ -1,1 +1,1 @@
-![Database Drill Scores](http://goo.gl/Ulgh87)
+![Database Drill Scores](http://goo.gl/10z9BM)
