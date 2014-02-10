@@ -1,1 +1,0 @@
-# Solution for Challenge: Database Drill: SQLzoo for SQL queries. Started 2014-02-10T01:50:54+00:00
