@@ -1,13 +1,13 @@
 # REVIEWING ASSERT STATEMENT
 # ---------
 
-def assert1
+def assert
   raise "Assertion failed!" unless yield
 end
 
 name = "bettysue"
-assert1 { name == "bettysue" }
-assert1 { name == "billybob" }
+assert { name == "bettysue" }
+assert { name == "billybob" }
 
 # Pseudocode:
 # #assert: raise RuntimeError message unless passed block evaluates to true (`yield` yields to the passed block)
