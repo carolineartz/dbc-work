@@ -13,9 +13,9 @@ assert { name == "billybob" }
 # #assert: raise RuntimeError message unless passed block evaluates to true (`yield` yields to the passed block)
 # set name to bettysue
 # call #assert with block boolean name is equal to bettysue
-# no exception is raised, evaluate to nil
+# no RuntimeError is raised, evaluate to nil
 # call #assert with block boolean name is equal to billybob
-# exception raised because name == 'billybob' => false
+# RuntimeError raised because name == 'billybob' => false
 
 # ORIGINAL IS_FIBONACCI? CODE AND ASSERT STATEMENTS
 # ---------
