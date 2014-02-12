@@ -78,4 +78,26 @@ assert {north_korean_cipher('gsoi?&cygo.*m*aerx&e&hmix#kmrkiv$epi!') == 'coke? y
 # its basis, test driven development. I have a lot to learn but this was a great introduction on the fundamental 
 # process. 
 
+# Found a presentation that I found relevant to asserting our driver code vs. how we were previously. A few excerpts:
+
+# Confident Code
+# * A style of method construction 
+# * Tells the story well 
+# * Says exactly what it intends to do 
+# * No provisos or digressions 
+# * Has a consistent narrative structure
+
+# On Duck Typing
+# * True duck typing is a confident style 
+# * Duck typing doesn't ask "are you a duck?" `object.is_a?(String)`
+# * Or even "can you quack?" `object.respond_to?(:each)`
+# * ''Treat the object like a duck'' (If it isn't it will complain)
+
+# Assertive Code
+# * Confident Code asserts itself 
+# * State your needs up-front 
+# * At the edges of your interface 
+# * Preconditions: Part of Design by Contract 
+# * No DbC framework needed 
+# * Assertions don't have to be spelled "assert()" 
 
