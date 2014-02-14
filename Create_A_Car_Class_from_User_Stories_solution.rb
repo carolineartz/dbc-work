@@ -1,20 +1,8 @@
 
-# create car
-# customize model
-# customize color
-# define driving distance
-# get speed
-# turn left/right
-# accelerate & decelerate
-# define speed
-# track total distance
-# start/stop
-# display last action
-
 
 
 class Car
-  attr_reader :color, :make, :model, :driving, :speed, :distance, :heading, :status
+  attr_accessor :color, :make, :model, :driving, :speed, :distance, :heading, :status
   CARDINAL_DIRECTIONS = ['North', 'East', 'South', 'West']
 
   def initialize(color, make, model, heading = 'North', distance = 0)
@@ -31,11 +19,11 @@ class Car
   def accelerate(speed_limit)
     @driving = true
     until @speed == speed_limit
-        @speed += 1
-        puts @speed
-        sleep(0.25) 
+      @speed += 1
+      puts @speed
+      # sleep(0.25)
     end
-    @status = "On the move and burning rubber. cruising at #{speed_limit}mph."
+    @status = "On the move and burning rubber. cruising at #{speed_limit} mph."
   end
 
   def decelerate(speed_limit)
@@ -43,18 +31,20 @@ class Car
     until @speed == speed_limit
       @speed -= 1
       puts @speed
-      sleep(0.25)
+      # sleep(0.25)
     end
-    @status = "Pumped the breaks! Creeping at #{speed_limit}mph."
+    @status = "Pumped the breaks! Creeping at #{speed_limit} mph."
   end
 
   def stop
     decelerate(0)
     @driving = false
-    @status = 'On hold. Not currently moving...'
+    @status = "Stopped."
+    yield if block_given?
   end
 
   def drive(distance_traveled)
+    @status = "Driving #{distance_traveled} miles."
     @distance += distance_traveled
   end
 
@@ -74,59 +64,51 @@ end
 
 ################### DRIVER CODE ##########################
 
-car = Car.new('black', 'Lamborghini', 'Murciélago')
+
+car = Car.new('black', 'Lamborghini', 'Murcielago')
 puts car.color == 'black'
 puts car.make == 'Lamborghini'
-puts car.model == 'Murciélago'
+puts car.model == 'Murcielago'
 puts car.driving == false
 puts car.speed == 0
-puts car.status 
+puts car.status
 
-car.accelerate(90)
-car.speed == 90
-car.driving == true
-puts car.status 
+car.accelerate(25)
+puts car.status
 
-car.decelerate(45)
-car.speed == 45
-car.driving == true
-puts car.status 
+car.drive(0.25)
+puts car.status
 
 car.stop
-car.driving == false
-car.speed == 0
-puts car.status 
+puts car.status
+
+car.turn_right
+puts car.status
+
+car.accelerate(35)
+puts car.status
 
 car.drive(1.5)
-car.distance == 1.5
-car.drive(2.0)
-car.distance == 3.5
-puts car.status 
+puts car.status
 
-puts car.heading == 'North'
-car.turn_left
-puts car.status 
-puts car.heading == 'West'
-car.turn_left
-puts car.status 
-puts car.heading == 'South'
-car.turn_left
-puts car.status 
-puts car.heading == 'East'
-car.turn_right
-puts car.status 
-puts car.heading == 'South'
-car.turn_right
-puts car.status 
-puts car.heading == 'West'
-car.turn_right
-puts car.status 
-puts car.heading == 'North'
-car.turn_right
-puts car.status 
-puts car.heading == 'East'
-car.turn_right
-puts car.status 
-puts car.heading == 'South'
+puts "School zone. Crap, I'm going #{car.speed - 15}mph over. Gotta slow down."
+car.decelerate(15)
+puts car.status
 
+car.drive(0.25)
+puts car.status
 
+car.stop
+puts car.status
+
+car.turn_left
+puts car.status
+
+car.accelerate(35)
+puts car.status
+
+car.drive(1.4)
+puts car.status
+
+car.stop { car.status = "Arrived! Logging #{car.distance} miles!" }
+puts car.status
