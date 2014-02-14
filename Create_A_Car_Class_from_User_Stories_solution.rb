@@ -33,7 +33,7 @@ class Car
     until @speed == speed_limit
         @speed += 1
         puts @speed
-        # sleep(0.25) 
+        sleep(0.25) 
     end
     @status = "On the move and burning rubber. cruising at #{speed_limit}mph."
   end
@@ -43,7 +43,7 @@ class Car
     until @speed == speed_limit
       @speed -= 1
       puts @speed
-      # sleep(0.25)
+      sleep(0.25)
     end
     @status = "Pumped the breaks! Creeping at #{speed_limit}mph."
   end
@@ -73,10 +73,6 @@ end
 
 
 ################### DRIVER CODE ##########################
-
-
-#car = Car.new
-#car.class == Car
 
 car = Car.new('black', 'Lamborghini', 'Murciélago')
 puts car.color == 'black'
