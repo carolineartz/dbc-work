@@ -1,6 +1,3 @@
-
-
-
 class Car
   attr_accessor :color, :make, :model, :driving, :speed, :distance, :heading, :status
   CARDINAL_DIRECTIONS = ['North', 'East', 'South', 'West']
