@@ -14,17 +14,18 @@
 
 
 class Car
-  attr_reader :color, :make, :driving, :speed, :distance, :heading, :status
+  attr_reader :color, :make, :model, :driving, :speed, :distance, :heading, :status
   CARDINAL_DIRECTIONS = ['North', 'East', 'South', 'West']
 
-  def initialize(color, make, heading = 'North', distance = 0)
+  def initialize(color, make, model, heading = 'North', distance = 0)
     @color = color
     @make = make
+    @model = model
     @driving = false
     @speed = 0
     @distance = distance
     @heading = heading
-    @status = 'Parked and ready to go!'
+    @status = "#{color.capitalize} #{make} #{model} full of pizza and ready to go!"
   end
 
   def accelerate(speed_limit)
@@ -32,9 +33,9 @@ class Car
     until @speed == speed_limit
         @speed += 1
         puts @speed
-        sleep(0.25)
+        # sleep(0.25) 
     end
-    @status = "Pizza's getting cold! On the move and burning rubber. Crusing at #{speed_limit}mph."
+    @status = "On the move and burning rubber. cruising at #{speed_limit}mph."
   end
 
   def decelerate(speed_limit)
@@ -42,7 +43,7 @@ class Car
     until @speed == speed_limit
       @speed -= 1
       puts @speed
-      sleep(0.25)
+      # sleep(0.25)
     end
     @status = "Pumped the breaks! Creeping at #{speed_limit}mph."
   end
@@ -77,20 +78,21 @@ end
 #car = Car.new
 #car.class == Car
 
-car = Car.new('red', 'buick')
-puts car.color == 'red'
-puts car.make == 'buick'
+car = Car.new('black', 'Lamborghini', 'Murciélago')
+puts car.color == 'black'
+puts car.make == 'Lamborghini'
+puts car.model == 'Murciélago'
 puts car.driving == false
 puts car.speed == 0
 puts car.status 
 
-car.accelerate(25)
-car.speed == 25
+car.accelerate(90)
+car.speed == 90
 car.driving == true
 puts car.status 
 
-car.decelerate(15)
-car.speed == 15
+car.decelerate(45)
+car.speed == 45
 car.driving == true
 puts car.status 
 
