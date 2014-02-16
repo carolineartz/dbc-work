@@ -1,3 +1,13 @@
+# CREATE A CAR CLASS FROM USER STORIES
+# --------------------------------
+# Caroline Artz
+# 2/15/2014
+# Contents: class Car, class Pizza, class Trip, driver code, relfection
+
+
+# Class #1 - class Car
+# ---------------------
+
 class Car
   attr_accessor :distance_traveled, :pizza_delivery
   DIRECTIONS = %w(North East South West)
@@ -33,13 +43,13 @@ class Car
     puts " for #{distance} miles."
   end
 
-  def stop(signal) #not calling change_speed(0) method anymore
+  def stop(signal) #not calling change_speed(0) method anymore so I can display play-by-play more appropriately
     @speed = 0
     @driving = false
     puts "Stopped at #{signal}"
   end
 
-  def turn(direction) 
+  def turn(direction)
     unless (direction.downcase == 'left') || (direction.downcase == 'right')
       raise ArgumentError, 'Turn direction must be \'right\' or \'left\' '
     end
@@ -54,7 +64,7 @@ class Car
     get_next_order
   end
 
-  def get_next_order
+  def get_next_order #FIFO for warm pizza!
     raise ArgumentError, 'All out of pizzas' if @pizza_delivery.empty?
     @pizza_delivery[0].each do |pizza|
       puts pizza.display_pizza
@@ -68,6 +78,8 @@ class Car
 
 end
 
+# Class #2 - class Pizza
+# -----------------------
 
 class Pizza
   attr_accessor :special_instructions
@@ -102,6 +114,8 @@ class Pizza
 
 end
 
+# Class #3 - class Trip
+# ----------------------
 
 class Trip
   def initialize(car, route)
@@ -110,17 +124,14 @@ class Trip
   end
 
   def travel
-    @route.each do |direction|
-      @car.send *direction
-    end
+     @route.each {|direction| @car.send *direction}
     puts "Total Distance: #{@car.distance_traveled} miles"
   end
 end
 
 
-
-###~DRIVERish CODE
-
+# DRIVER CODE
+# ------------
 
 #Instantiate Pizza Delivery Car
 car = Car.new('black', 'Lamborghini', 'Murcielago', 4)
@@ -148,3 +159,20 @@ trip.travel
 #Print any remaining pizzas for delivery
 puts "\nWhat\'s left?"
 car.get_remaining_pizzas.flatten.each {|pie| pie.display_pizza}
+
+
+
+# REFLECTION
+# ----------------------
+# I was able to work with a guide on this exercise during a pair when my partner didn't show up. He
+# was extremely helpful and I appreciated that he further pushed me to make this problem more
+# challenging. The things I liked most about this challenge was getting to use the #send method and
+# additional practice with blocks and yield. I can definitely see how the #send method will be a
+# useful tool in the future. I need to move on from this challenge and work on other ones but if I
+# was going to refactor this further, I would like to implement a hash for passing the arguments to
+# the Car class. I'm going to try that type of approach on another challenge and maybe I can come
+# back to this down the line and shape things up a bit more! 
+
+# I tried to work on my 'confident code'--and coerce when in doubt (e.g., line 123 @route =
+# Array(route)), but it's definitely difficult for me as I tend to write more timid code and am not
+# 100% clear on all the ins and outs of confident code, assertive code, duck typing etc.
