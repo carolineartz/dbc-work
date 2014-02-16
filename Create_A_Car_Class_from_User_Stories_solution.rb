@@ -39,7 +39,7 @@ class Car
     puts "Stopped at #{signal}"
   end
 
-  def turn(direction) #todo add argument error
+  def turn(direction) 
     unless (direction.downcase == 'left') || (direction.downcase == 'right')
       raise ArgumentError, 'Turn direction must be \'right\' or \'left\' '
     end
