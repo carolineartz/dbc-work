@@ -84,4 +84,4 @@ end
 # hope to find out if this is on the right track for refactoring, I definitely find the process
 # difficult and sometimes counter-intuitive. I referenced a textbook I have on refactoring in
 # addition to the resources provided and found it helpful. I will definitely be taking some time to
-# review my fellow boots' solutions for this challenge!
+# review my fellow boots' solutions for this challenge if we're given the opportunity!
