@@ -1,4 +1,3 @@
-
 # YOUR NAMES: Caroline Artz (Went solo, didn't have an opportunity for a GPS for this)
 
 require_relative 'state_data' #requires (links) the content of the file state_data (here its in the same directory)
@@ -43,7 +42,7 @@ class VirusPredictor
   end
 
   #private method determines/outputs disease spread speed based on input state population density
-  #OBJECTIVE: Refactor the private method predicted_deaths and speed_of_spread.
+  #OBJECTIVE: Refactor the private method speed_of_spread.
   def speed_of_spread #in months
     speed = case @population_density
               when 0...50 then 2.5
