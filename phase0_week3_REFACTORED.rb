@@ -1,8 +1,7 @@
 
-
 # YOUR NAMES: Caroline Artz (Went solo, didn't have an opportunity for a GPS for this)
 
-require_relative 'state_data' #requires (links) the content of the file state_data in the same directory
+require_relative 'state_data' #requires (links) the content of the file state_data (here its in the same directory)
 
 class VirusPredictor
   attr_accessor :population
