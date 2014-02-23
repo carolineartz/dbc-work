@@ -3,6 +3,10 @@ body {
   background: #a4617f;
 }
 
+a {
+  text-decoration: none;
+}
+
 #header-logo-container {
   float:left;
   max-width: 220px;
@@ -75,3 +79,6 @@ body {
   float: left;
 }
 
+#apply-btn a {
+  color: #454758;
+}
