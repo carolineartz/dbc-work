@@ -184,14 +184,14 @@ greedy_house = House.new(55, 45, 32, 11) rescue (puts $!.message == 'wrong numbe
 
 # get current temps and confirm definitions
 p my_house.current_temp == 75 #=> true if my house current temp is 75
-p my_house.minimum_temp == 63 #=> true if my house min temp is 60
+p my_house.minimum_temp == 63 #=> true if my house min temp is 63
 p my_house.maximum_temp == 80 #=> true if my house max temp is 80
 p my_house.ac_on == false #=> true if my house instantiated with AC off
 p my_house.heater_on == false #=> true if my house instantiated with heat off
 
 p your_house.current_temp == 78 #=> true if your house current temp is 78
-p your_house.minimum_temp == 73 #=> true if your house min temp is 66
-p your_house.maximum_temp == 82 #=> true if your house max temp is 83
+p your_house.minimum_temp == 73 #=> true if your house min temp is 73
+p your_house.maximum_temp == 82 #=> true if your house max temp is 82
 p your_house.ac_on == false #=> true if your house instantiated with AC off
 p your_house.heater_on == false #=> true if your house instantiated with heat off
 
