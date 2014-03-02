@@ -99,8 +99,8 @@ def find_missing_number(number_string)
 end
 
 # What are the most difficult missing numbers to detect?
-# With my alternative solution above, the endpoints were more 'difficult' to account for; however, with the 2 array solution, I don't think any
-# missing number is more or less difficult to detect
+# With my alternative solution above, the endpoints were more 'difficult' to account for; 
+# however, with the 2 array solution, I don't think any missing number is more or less difficult to detect
 string_missing_7     = (1..10000).reject { |x| x == 7 }.join(', ')
 string_missing_4567  = (1..10000).reject { |x| x == 4567 }.join(', ')
 string_missing_9998  = (1..10000).reject { |x| x == 9998 }.join(', ')
