@@ -1,11 +1,5 @@
-/*
-
-In this challenge you will work with the following JavaScript objects.
-
-Do not alter these objects here.
-
-*/
-
+//In this challenge you will work with the following JavaScript objects.
+//Do not alter these objects here.
 
 // These are the votes cast by each student.
 var votes = {
@@ -35,7 +29,7 @@ var votes = {
   "Xavier": { president: "Steve", vicePresident: "Hermann", secretary: "Fred", treasurer: "Ivy" },
   "Yvonne": { president: "Bob", vicePresident: "Zane", secretary: "Fred", treasurer: "Hermann" },
   "Zane": { president: "Louise", vicePresident: "Hermann", secretary: "Fred", treasurer: "Mary" }
-}
+};
 
 // Tally the votes in voteCount.
 var voteCount = {
@@ -43,48 +37,59 @@ var voteCount = {
   vicePresident: {},
   secretary: {},
   treasurer: {}
-}
+};
 
-/* The name of each student receiving a vote for an office should become a property 
-of the respective office in voteCount.  After Alex's votes have been tallied, 
-voteCount would be ...
-
-  var voteCount = {
-    president: { Bob: 1 },
-    vicePresident: { Devin: 1 },
-    secretary: { Gail: 1 },
-    treasurer: { Kerry: 1 }
-  }
-
-*/
-
-
-/* Once the votes have been tallied, assign each officer position the name of the 
-student who received the most votes. */
+/* The name of each student receiving a vote for an office should become a property
+of the respective office in voteCount. Once the votes have been tallied, assign 
+each officer position the name of the student who received the most votes. */
 var officers = {
   president: undefined,
   vicePresident: undefined,
   secretary: undefined,
   treasurer: undefined
-}
+};
 
-
-/*
-
-Below you will find driver code. Run the code in this file either
+/*Below you will find driver code. Run the code in this file either
 from the command line using Node.js or by pasting the code of this
 entire file into your browser console.  All tests will log true
-in the console when they pass--false, otherwise.
-
-*/
-
+in the console when they pass--false, otherwise.*/
 
 // __________________________________________
 // Write your code below.
+var offices = ["president", "vicePresident", "secretary", "treasurer"];
+var tallyVotes = function() {
+  for (var voter in votes) {
+    for (var i=0; i<offices.length; i++) {
+      var position = offices[i];
+      if ((voteCount[position]).hasOwnProperty(votes[voter][position])) {
+        voteCount[position][votes[voter][position]]++;
+      }
+      else {
+        voteCount[position][votes[voter][position]] = 1;
+      }
+    }
+  }
+};
 
+tallyVotes();
 
+var declareWinner = function() {
+  for (var office in voteCount){
+    var scores = voteCount[office];
+    var record = 0;
+    var winner;
 
+    for (var name in scores) {
+      if ((scores[name]) > record) {
+        record = scores[name];
+        winner = name;
+      }
+    }
+    officers[office] = winner;
+  }   
+};
 
+declareWinner();
 
 
 // __________________________________________
@@ -104,46 +109,46 @@ assert(
   (voteCount.president["Bob"] === 3),
   "Bob should receive three votes for President.",
   "1. "
-)
+);
 
 assert(
   (voteCount.vicePresident["Bob"] === 2),
   "Bob should receive two votes for Vice President.",
   "2. "
-)
+);
 
 assert(
   (voteCount.secretary["Bob"] === 2),
   "Bob should receive two votes for Secretary.",
   "3. "
-)
+);
 
 assert(
   (voteCount.treasurer["Bob"] === 4),
   "Bob should receive four votes for Treasurer.",
   "4. "
-)
+);
 
 assert(
   (officers.president === "Louise"),
   "Louise should be elected President.",
   "5. "
-)
+);
 
 assert(
   (officers.vicePresident === "Hermann"),
   "Hermann should be elected Vice President.",
   "6. "
-)
+);
 
 assert(
   (officers.secretary === "Fred"),
   "Fred should be elected Secretary.",
   "7. "
-)
+);
 
 assert(
   (officers.treasurer === "Ivy"),
   "Ivy should be elected Treasurer.",
   "8. "
-)
+);
