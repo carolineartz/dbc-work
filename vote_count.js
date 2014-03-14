@@ -92,6 +92,14 @@ var declareWinner = function() {
 declareWinner();
 
 
+/*Refactor and Reflect
+This challenged really helped me gain more confidance with javascript and specifically syntax and for/for..in loops;
+That said, although I tried to refactor, I don't know how DRY or good my code is--there just seems to be so much to 
+learn in JS and it seems overwhelming to tackle, especially because I don't know exactly what to focus on for our purposes. 
+Having the bit of background that I have in Java does help a little the the syntax and loop logic. 
+*/
+
+
 // __________________________________________
 // Driver Code:  Do not alter code below this line.
 
