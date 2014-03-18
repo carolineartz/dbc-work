@@ -55,8 +55,7 @@ puts check_password('your name is NOT Caroline!') ==
 # think my approach is optimal. But I'm also not sure if my interpretation of printing a message for every
 # requirement violation is common vs breaking and returning the first rule violated when there's at least 
 # one violation. I like this problem though, it made me think quite a bit and also research/get more familiar
-# with some of the hash and regexp methods. My refactored code (included here) is longer than my original code, 
-# but I felt the logic was more explicit and thus easier to read/understand. Not sure!
+# with regexp methods even if I didn't end up using them in the end.
 
 # I came back to this after checking out others and realizing I didn't account for inclusion of invalid characters
 # e.g., special characters beyond those that are allowed). I created a new case for this to push/display messages. 
