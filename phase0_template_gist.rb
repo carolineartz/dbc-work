@@ -71,4 +71,5 @@ six characters and no more than twenty'
 # think my approach is optimal. But I'm also not sure if my interpretation of printing a message for every
 # requirement violation is common vs breaking and returning the first rule violated when there's at least 
 # one violation. I like this problem though, it made me think quite a bit and also research/get more familiar
-# with some of the hash and regexp methods. 
+# with some of the hash and regexp methods. My refactored code is longer than my original code, but I felt the 
+# logic was more explicit and thus easier to read/understand. Not sure!
