@@ -27,7 +27,7 @@ end
 
 
 # REFACTORED CODE:
-def check_password_r(password)
+def check_password(password)
   raise ArgumentError, 'Error: Requires string input.' unless password.respond_to?(:split) # check if input is string
 
   patterns = {/^.{6,20}\Z/                      => 'six characters and no more than twenty',
@@ -38,7 +38,7 @@ def check_password_r(password)
     (pattern =~ password) == nil
   end
   return 'Valid Password' if invalids.empty?
-  "must contain at least:\n" + invalids.values.join("\n")
+  "Error. Must contain at least:\n" + invalids.values.join("\n")
 end
 
 
