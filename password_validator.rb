@@ -10,8 +10,6 @@
 # NOTE: my assumption is that the invalid message should always indicate ALL violated requirements
 
 # INITIAL CODE:
-# This is the first version of code to pass the rspec tests and get all green.
-
 def check_password(password)
   raise ArgumentError, 'Error: Requires string input.' unless password.respond_to?(:split) # check if input is string
   invalids = []
