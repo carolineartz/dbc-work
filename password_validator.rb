@@ -29,7 +29,7 @@ end
 # true if string array as input returns defined error message
 puts check_password(['ruby']) rescue (puts $!.message == 'Error. Requires string input.')
 
-# true if returns messages for invalid length-short and missing uppercase/special char                                                                         #   error message
+# true if returns messages for invalid length-short and missing uppercase/special char
 puts check_password('rddRy') ==
 'Error. Passwords must:
   be at least 6 characters
