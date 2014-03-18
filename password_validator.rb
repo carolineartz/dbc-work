@@ -9,59 +9,45 @@
 
 # NOTE: my assumption is that the invalid message should always indicate ALL violated requirements
 
-# INITIAL CODE:
+# INITIAL CODE (I merged my refactored and original code into one because the driver code had to change a lot)
 def check_password(password)
-  raise ArgumentError, 'Error: Requires string input.' unless password.respond_to?(:split) # check if input is string
+  raise ArgumentError, 'Error. Requires string input.' unless password.respond_to?(:split) # check if input is string
   invalids = []
 
-  invalids << 'six characters and no more than twenty' unless !!(password =~ /^.{6,20}\Z/)
-  invalids << 'one uppercase letter' unless !!(password =~ /[A-Z]+/)
-  invalids << 'one digit OR special character: !, @, #, $, %, &, *, +, :, ?' unless !!(password =~ /[0-9]|(!|@|#|\$|%|&|\*|\+|:|\?)/)
+  invalids << '  be at least 6 characters' if password.length < 6
+  invalids << '  be no more than 20 characters' if password.length > 20
+  invalids << '  contain at least one uppercase letter' unless !!(password =~ /[A-Z]+/)
+  invalids << '  contain at least one digit OR special character: ! @ # $ % & * + : ?' unless !!(password =~ /[0-9]|[!@#\$%&\*\+:\?]/)
+  invalids << '  not contain invalid characters' if !!(password =~ /[^ !@#\$%&\*\+:\?[:alnum:]]/)
 
   return 'Valid Password' if invalids.empty?
-  "Error. Must contain at least:\n" + invalids.join("\n")
-end
-
-
-
-# REFACTORED CODE:
-def check_passwordr(password)
-  raise ArgumentError, 'Error: Requires string input.' unless password.respond_to?(:split) # check if input is string
-
-  patterns = { /^.{6,20}\Z/                      => 'six characters and no more than twenty',
-               /[A-Z]+/                          => 'one uppercase letter',
-               /[0-9]|(!|@|#|\$|%|&|\*|\+|:|\?)/ => 'one digit OR special character: !, @, #, $, %, &, *, +, :, ?'}
-
-  invalids = patterns.keep_if do |pattern|
-    (pattern =~ password) == nil
-  end
-  return 'Valid Password' if invalids.empty?
-  "Error. Must contain at least:\n" + invalids.values.join("\n")
+  "Error. Passwords must:\n" + invalids.join("\n")
 end
 
 
 # DRIVER CODE
 # true if string array as input returns defined error message
-puts check_password(['ruby']) rescue (puts $!.message == 'Error: Requires string input.')
+puts check_password(['ruby']) rescue (puts $!.message == 'Error. Requires string input.')
 
 # true if returns messages for invalid length and missing uppercase/special char                                                                         #   error message
 puts check_password('rddRy') ==
-'Error. Must contain at least:
-six characters and no more than twenty
-one digit OR special character: !, @, #, $, %, &, *, +, :, ?'
+'Error. Passwords must:
+  be at least 6 characters
+  contain at least one digit OR special character: ! @ # $ % & * + : ?'
 
 # true if returns msg for missing uppercase letter
-puts check_password('rubies!') ==
-'Error. Must contain at least:
-one uppercase letter'
+puts check_password('rub]ies!') ==
+'Error. Passwords must:
+  contain at least one uppercase letter
+  not contain invalid characters'
 
 # true if recognizes valid password format
 puts check_password('my name is Caroline!') == 'Valid Password'
 
 # true if returns msg for invalid length
 puts check_password('your name is NOT Caroline!') ==
-'Error. Must contain at least:
-six characters and no more than twenty'
+'Error. Passwords must:
+  be no more than 20 characters'
 
 # INCLUDE REFLECTION HERE:
 # For some reason this challenge seems more difficult than it needs to be--at least the way(s) I could
@@ -69,5 +55,8 @@ six characters and no more than twenty'
 # think my approach is optimal. But I'm also not sure if my interpretation of printing a message for every
 # requirement violation is common vs breaking and returning the first rule violated when there's at least 
 # one violation. I like this problem though, it made me think quite a bit and also research/get more familiar
-# with some of the hash and regexp methods. My refactored code is longer than my original code, but I felt the 
-# logic was more explicit and thus easier to read/understand. Not sure!
+# with some of the hash and regexp methods. My refactored code (included here) is longer than my original code, 
+# but I felt the logic was more explicit and thus easier to read/understand. Not sure!
+
+# I came back to this after checking out others and realizing I didn't account for inclusion of invalid characters
+# e.g., special characters beyond those that are allowed). I created a new case for this to push/display messages. 
