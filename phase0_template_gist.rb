@@ -43,7 +43,7 @@ end
 
 
 # DRIVER CODE
-# true if string array as input returns defined
+# true if string array as input returns defined error message
 puts check_password(['ruby']) rescue (puts $!.message == 'Error: Requires string input.')
 
 # true if returns messages for invalid length and missing uppercase/special char                                                                         #   error message
