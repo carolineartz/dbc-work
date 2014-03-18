@@ -46,13 +46,13 @@ puts check_password(['ruby']) rescue (puts $!.message == 'Error: Requires string
 
 # true if returns messages for invalid length and missing uppercase/special char                                                                         #   error message
 puts check_password('rddRy') ==
-'must contain at least:
+'Error. Must contain at least:
 six characters and no more than twenty
 one digit OR special character: !, @, #, $, %, &, *, +, :, ?'
 
 # true if returns msg for missing uppercase letter
 puts check_password('rubies!') ==
-'must contain at least:
+'Error. Must contain at least:
 one uppercase letter'
 
 # true if recognizes valid password format
@@ -60,7 +60,7 @@ puts check_password('my name is Caroline!') == 'Valid Password'
 
 # true if returns msg for invalid length
 puts check_password('your name is NOT Caroline!') ==
-'must contain at least:
+'Error. Must contain at least:
 six characters and no more than twenty'
 
 # INCLUDE REFLECTION HERE:
