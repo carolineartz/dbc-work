@@ -25,12 +25,12 @@ end
 
 
 # REFACTORED CODE:
-def check_password(password)
+def check_passwordr(password)
   raise ArgumentError, 'Error: Requires string input.' unless password.respond_to?(:split) # check if input is string
 
-  patterns = {/^.{6,20}\Z/                      => 'six characters and no more than twenty',
-              /[A-Z]+/                          => 'one uppercase letter',
-              /[0-9]|(!|@|#|\$|%|&|\*|\+|:|\?)/ => 'one digit OR special character: !, @, #, $, %, &, *, +, :, ?'}
+  patterns = { /^.{6,20}\Z/                      => 'six characters and no more than twenty',
+               /[A-Z]+/                          => 'one uppercase letter',
+               /[0-9]|(!|@|#|\$|%|&|\*|\+|:|\?)/ => 'one digit OR special character: !, @, #, $, %, &, *, +, :, ?'}
 
   invalids = patterns.keep_if do |pattern|
     (pattern =~ password) == nil
