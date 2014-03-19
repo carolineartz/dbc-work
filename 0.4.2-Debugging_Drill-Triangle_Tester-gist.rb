@@ -42,8 +42,6 @@ For each bug (there are three initial bugs that cause interpreter errors), answe
 
 ###3) Pass the tests 
 
-#I didn't have any more bugs and I'm not sure where to go from here...
-
 --- Last Bug ---
 The last bug isn't causing interpreter errors, but it's causing the output of the program to fail the RSpec tests.  
 
