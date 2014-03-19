@@ -1,4 +1,3 @@
-
 =begin
 As you are debugging, ask yourself:
 * Do you have enough information to decipher the problem?  
@@ -44,9 +43,9 @@ For each bug (there are three initial bugs that cause interpreter errors), answe
 
 --- Last Bug ---
 The last bug isn't causing interpreter errors, but it's causing the output of the program to fail the RSpec tests.  
-
 When you solve the error, describe what is happening as clearly as possible:
-If this was targeting the issue with the true/false strings, which I addressed in a previous bug fix, the issue 
+
+Not getting an error but if this was targeting the issue with the true/false strings, which I addressed in a previous bug fix, the issue 
 relates to ruby strings being truthy and thus would return true when set to return "false"
 
 ###4) Review your process and methodology
