@@ -48,24 +48,30 @@ For each bug (there are three initial bugs that cause interpreter errors), answe
 The last bug isn't causing interpreter errors, but it's causing the output of the program to fail the RSpec tests.  
 
 When you solve the error, describe what is happening as clearly as possible:
-
+If this was targeting the issue with the true/false strings, which I addressed in a previous bug fix, the issue 
+relates to ruby strings being truthy and thus would return true when set to return "false"
 
 ###4) Review your process and methodology
 
 * What were your steps to tackle this problem?
-
 * Write down the processes you followed that could be applied in other debugging situations.
-
+- first and foremost, reformat/reindent the code-it's shitty to try to debug without proper formatting from the start.
+- Paste sublime and using Ruby build system for output:
+  - read the error, 
+  - target the spot where it may have originated based on whether the description of the error (the first line) 
+     or the trigger, tells enough info. 
+  - Then make one change and test
+- proceed using these steps
 
 ###5) Submit and Reflect 
 
 Review other solutions and the canonical solution listed on the "Review and Reflect" tab.  
-
 Take a moment to reflect on the canonical solution and the solutions of other students. Add any insights to your gist to help distill your own process here:
-
-
+My method was peretty similar to the posted solution--but not quite as methodical. definitely need to get better at TDD and look forwrad to continuing 
+to get some practice
 
 =end
+
 
 ###Include your final code below (with driver code and expectations!):
 
@@ -92,3 +98,12 @@ def valid_triangle?(a, b, c)
     end
   end
 end
+
+puts valid_triangle?(1,2,3,4) rescue (puts $!.message == "wrong number of arguments (4 for 3)")
+puts valid_triangle?(5,5,5) == true
+puts valid_triangle?(0,3,4) == false
+puts valid_triangle?(5,5,9) == true
+puts valid_triangle?(5,5,8) == true
+puts valid_triangle?(115, 252, 277) == true
+puts valid_triangle?(5,1,1) == false
+
