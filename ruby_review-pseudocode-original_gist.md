@@ -82,39 +82,38 @@ Like above, I think this is done pretty well--there are some instances e.g., ref
 
 My pseudocode, particularly for the Regex exercise, is *pretty* good...certainly could be better. 
 
-	#######################################PSEUDOCODE###################################
+
 	 
-	# INPUT: a positive integer
-	# OUPUT: boolean true/false if it is a fibonacci number
-	# generate fib numbers less than or equal to input
-	# test whether input one of the generated fib numbers
-	# return boolean true if is fib number
-	# return boolean false if not a fib number
+> INPUT: a positive integer<br/>
+> OUPUT: boolean true/false if it is a fibonacci number<br/>
+> generate fib numbers less than or equal to input<br/>
+> test whether input one of the generated fib numbers<br/>
+> return boolean true if is fib number<br/>
+> return boolean false if not a fib number<br/>
 
 My Fibonacci pseudcode does *kinda* fit in lines with some of the guidelines, but reflecting on it, I don't really feel it's all that helpful in planning an approach. It's more or less a slightly more detailed objective--which is pretty obvious. 
 
-	#######################################PSEUDOCODE###################################
- 
-	# INPUT: a string
-	# OUPUT & PSEUDOCODE
-	# Contains SSN =>     OUTPUT: Return boolean true/false
-	#                     Test string for chars in SSN format
-	# Return SSN =>       OUTPUT: Return SSN extracted from input, as string
-	#                     Call Contains SSN method-test if a SSN in string
-	#                     If contains SSN, extract and return.
-	#                     Otherwise, return nil
-	# Return all SSNs =>  OUTPUT: Return string array of all SSNs in input string, else empty
-	#                     Create an array to hold any SSNs in string
-	#                     Check for SSNs in string
-	#                     Push any formatted SSNs to array and return 
-	# Obfuscate SSNs =>   OUTPUT: Return input string with any SSNs obfuscated to XXX-XX-1234 
-	#                     Check string for any SSNs
-	#                     Replace first 5 number characters with X and return string
-	# Format SSNs =>      OUTPUT: Return input string; if any SSNs, formated as 123-45-6789
-	#                     Search string for any format SSN
-	#                     Extract each SSN's number char groups 
-	#                     join them with appropriate - 
-	#                     push formatted SSNs to array, join to string and return
+> INPUT: a string<br/>
+> OUPUT & PSEUDOCODE<br/>
+> Contains SSN =>     OUTPUT: Return boolean true/false<br/>
+>                     Test string for chars in SSN format<br/>
+> Return SSN =>       OUTPUT: Return SSN extracted from input, as string<br/>
+>                     Call Contains SSN method-test if a SSN in string<br/>
+>                     If contains SSN, extract and return.<br/>
+>                     Otherwise, return nil<br/>
+> Return all SSNs =>  OUTPUT: Return string array of all SSNs in input string, else empty<br/>
+>                     Create an array to hold any SSNs in string<br/>
+>                     Check for SSNs in string<br/>
+>                     Push any formatted SSNs to array and return<br/>
+> Obfuscate SSNs =>   OUTPUT: Return input string with any SSNs obfuscated to XXX-XX-1234<br/>
+>                     Check string for any SSNs<br/>
+>                     Replace first 5 number characters with X and return string<br/>
+> Format SSNs =>      OUTPUT: Return input string; if any SSNs, formated as 123-45-6789<br/>
+>                     Search string for any format SSN<br/>
+>                     Extract each SSN's number char groups<br/>
+>                     join them with appropriate -<br/>
+>                     push formatted SSNs to array, join to string and return<br/>
+
 
 I like my Regex pseudocode--concise but thorough and formatted better than some of the ones I come up with. I will start working on indenting or sectioning off parts with brackets when it makes sense. I think I have a lot to learn when it comes to producing "good" pseudocode...then again, and maybe I'm alone in this, but I feel like this challenge possibily made me more confused about the definition of "good" pseudocode...
 
