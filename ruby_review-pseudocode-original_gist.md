@@ -4,19 +4,19 @@
 
 ###Pseudocode here:
 
-> 	INPUT: String of text that may or may not contain a SSN<br/> 
-> 	OUPUT: for has_ssn? -- Returning either true or false as to whether an SSN is present<br/>
-> 	for grab_ssn -- returning just the SSN from the string(or nil if there is no SSN)<br/>
-> 	for grab_all_ssns -- returning all SSNs from string<br/>
-> 	for hide_all_ssns -- The SSNs with the first 5 digits replaced with an 'X'<br/>
-> 	for format_ssns -- Returns SSNs in proper 123-45-6789 formatting<br/>
-> 	
-> 	What are the steps to solve the problem?  Write them out in plain english as best you can.<br/>
-> 	for has_ssn -- use regex to match a pattern in the string that fits SSN formatting.  If yes, return true<br/>
-> 	for grab_ssn -- find if string contains SSN, and return just the SSN if it does<br/>
-> 	for grab_all -- find all matching SSN patterns in string (.scan?).  Assign to array, loop through and return values<br/>
-> 	for hide_all -- Use gsub to sub out for 5 digits with X<br/>
-> 	for format -- substitute out any sets of 9 numbers with '-' inserted
+	INPUT: String of text that may or may not contain a SSN 
+	OUPUT: for has_ssn? -- Returning either true or false as to whether an SSN is present
+	for grab_ssn -- returning just the SSN from the string(or nil if there is no SSN)
+	for grab_all_ssns -- returning all SSNs from string
+	for hide_all_ssns -- The SSNs with the first 5 digits replaced with an 'X'
+	for format_ssns -- Returns SSNs in proper 123-45-6789 formatting
+	
+	What are the steps to solve the problem?  Write them out in plain english as best you can.
+	for has_ssn -- use regex to match a pattern in the string that fits SSN formatting.  If yes, return true
+	for grab_ssn -- find if string contains SSN, and return just the SSN if it does
+	for grab_all -- find all matching SSN patterns in string (.scan?).  Assign to array, loop through and return values
+	for hide_all -- Use gsub to sub out for 5 digits with X
+	for format -- substitute out any sets of 9 numbers with '-' inserted
  
 ###Evaluate the code on the following characteristics:
 
@@ -40,23 +40,23 @@ This is kinda hard to judge since solving these for each method is relativlely s
 Mostly. Some regex
 
 Somewhat of a side note since this is very common across most of the solutions-- I find it less than helpful to keep every bit the original DBC instructions throughout our gist templates. They distract from the work of the individual-- cluttering up the page, decreasing readability. I prefer when it's replaced with a logical section titles, for example:<br />
-> *Steps:* <br/>
-> **and not**<br /> 
-> *What are the steps to solve the problem?  Write them out in plain english as best you can.*
+*Steps:* 
+**and not**<br /
+*What are the steps to solve the problem?  Write them out in plain english as best you can.*
 
 ***
 ##Fibonacci Number
 
 ###Pseudocode here:
 
-> 	INPUT:  i<br/>
-> 	OUPUT:  true if i is part of fibonacci sequence, false if i is not part of fibonacci sequence.<br/>
-> 	What are the steps to solve the problem?  Write them out in plain english as best you can.<br/>
-> 	check if i is positive.  if i is positive...<br/>
-> 	declare a variable sum that takes an array starting with the first 2 numbers of fibonacci sequence and adds them.  reassign the sum to the variable sum and add it to the end of the array.<br/>
-> 	while i is greater than last element of the array contiue adding the sum of the last 2 elements of the array.<br/>
-> 	if i is equal to last elememt in the array then i is part of the fibonacci sequence else return false.<br/>
-> 	deal with negative later...
+	INPUT:  i
+	OUPUT:  true if i is part of fibonacci sequence, false if i is not part of fibonacci sequence.
+	What are the steps to solve the problem?  Write them out in plain english as best you can.
+	check if i is positive.  if i is positive...
+	declare a variable sum that takes an array starting with the first 2 numbers of fibonacci sequence and adds them.  reassign the sum to the variable sum and add it to the end of the array.
+	while i is greater than last element of the array contiue adding the sum of the last 2 elements of the array.
+	if i is equal to last elememt in the array then i is part of the fibonacci sequence else return false.
+	deal with negative later...
  
 ###Evaluate the code on the following characteristics:
 
@@ -84,35 +84,35 @@ My pseudocode, particularly for the Regex exercise, is *pretty* good...certainly
 
 
 	 
-> INPUT: a positive integer<br/>
-> OUPUT: boolean true/false if it is a fibonacci number<br/>
-> generate fib numbers less than or equal to input<br/>
-> test whether input one of the generated fib numbers<br/>
-> return boolean true if is fib number<br/>
-> return boolean false if not a fib number<br/>
+	INPUT: a positive integer
+	OUPUT: boolean true/false if it is a fibonacci number
+	generate fib numbers less than or equal to input
+	test whether input one of the generated fib numbers
+	return boolean true if is fib number
+	return boolean false if not a fib number
 
 My Fibonacci pseudcode does *kinda* fit in lines with some of the guidelines, but reflecting on it, I don't really feel it's all that helpful in planning an approach. It's more or less a slightly more detailed objective--which is pretty obvious. 
 
-> INPUT: a string<br/>
-> OUPUT & PSEUDOCODE<br/>
-> Contains SSN =>     OUTPUT: Return boolean true/false<br/>
->                     Test string for chars in SSN format<br/>
-> Return SSN =>       OUTPUT: Return SSN extracted from input, as string<br/>
->                     Call Contains SSN method-test if a SSN in string<br/>
->                     If contains SSN, extract and return.<br/>
->                     Otherwise, return nil<br/>
-> Return all SSNs =>  OUTPUT: Return string array of all SSNs in input string, else empty<br/>
->                     Create an array to hold any SSNs in string<br/>
->                     Check for SSNs in string<br/>
->                     Push any formatted SSNs to array and return<br/>
-> Obfuscate SSNs =>   OUTPUT: Return input string with any SSNs obfuscated to XXX-XX-1234<br/>
->                     Check string for any SSNs<br/>
->                     Replace first 5 number characters with X and return string<br/>
-> Format SSNs =>      OUTPUT: Return input string; if any SSNs, formated as 123-45-6789<br/>
->                     Search string for any format SSN<br/>
->                     Extract each SSN's number char groups<br/>
->                     join them with appropriate -<br/>
->                     push formatted SSNs to array, join to string and return<br/>
+	INPUT: a string
+	OUPUT & PSEUDOCODE
+	Contains SSN =    OUTPUT: Return boolean true/false
+	                    Test string for chars in SSN format
+	Return SSN =      OUTPUT: Return SSN extracted from input, as string
+	                    Call Contains SSN method-test if a SSN in string
+	                    If contains SSN, extract and return.
+	                    Otherwise, return nil
+	Return all SSNs = OUTPUT: Return string array of all SSNs in input string, else empty
+	                    Create an array to hold any SSNs in string
+	                    Check for SSNs in string
+	                    Push any formatted SSNs to array and return
+	Obfuscate SSNs =  OUTPUT: Return input string with any SSNs obfuscated to XXX-XX-1234
+	                    Check string for any SSNs
+	                    Replace first 5 number characters with X and return string
+	Format SSNs =     OUTPUT: Return input string; if any SSNs, formated as 123-45-6789
+	                    Search string for any format SSN
+	                    Extract each SSN's number char groups
+	                    join them with appropriate -
+	                    push formatted SSNs to array, join to string and return
 
 
 I like my Regex pseudocode--concise but thorough and formatted better than some of the ones I come up with. I will start working on indenting or sectioning off parts with brackets when it makes sense. I think I have a lot to learn when it comes to producing "good" pseudocode...then again, and maybe I'm alone in this, but I feel like this challenge possibily made me more confused about the definition of "good" pseudocode...
