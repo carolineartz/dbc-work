@@ -40,8 +40,8 @@ This is kinda hard to judge since solving these for each method is relativlely s
 Mostly. Some regex
 
 Somewhat of a side note since this is very common across most of the solutions-- I find it less than helpful to keep every bit the original DBC instructions throughout our gist templates. They distract from the work of the individual-- cluttering up the page, decreasing readability. I prefer when it's replaced with a logical section titles, for example:<br />
-*Steps:* 
-**and not**<br /
+*Steps:* <br/>
+**and not**<br/>
 *What are the steps to solve the problem?  Write them out in plain english as best you can.*
 
 ***
