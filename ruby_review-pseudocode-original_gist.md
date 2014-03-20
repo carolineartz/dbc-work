@@ -10,7 +10,6 @@
 	for grab_all_ssns -- returning all SSNs from string
 	for hide_all_ssns -- The SSNs with the first 5 digits replaced with an 'X'
 	for format_ssns -- Returns SSNs in proper 123-45-6789 formatting
-	
 	What are the steps to solve the problem?  Write them out in plain english as best you can.
 	for has_ssn -- use regex to match a pattern in the string that fits SSN formatting.  If yes, return true
 	for grab_ssn -- find if string contains SSN, and return just the SSN if it does
