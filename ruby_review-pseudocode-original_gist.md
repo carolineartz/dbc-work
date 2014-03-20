@@ -36,7 +36,7 @@ Not really...beyond lack of formatting in terms of logical sections of their app
 This is kinda hard to judge since solving these for each method is relativlely straighforward; I don't think much more granularity is necessary.
 
 #### Intention is emphasized over implementation
-Mostly. Some regex
+Mostly. Some regex specific stuff that might violate the hallmarks...but we obviously had to use regex, so it doesn't apply.
 
 Somewhat of a side note since this is very common across most of the solutions-- I find it less than helpful to keep every bit the original DBC instructions throughout our gist templates. They distract from the work of the individual-- cluttering up the page, decreasing readability. I prefer when it's replaced with a logical section titles, for example:<br />
 *Steps:* <br/>
