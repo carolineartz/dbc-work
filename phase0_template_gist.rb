@@ -1,44 +1,54 @@
 # PSEUDOCODE
-# Please write your pseudocode here and keep it commented
-# INPUT:
-# OUPUT:
-# What are the steps to solve the problem?  Write them out in plain english as best you can.
-#
-#
+
+# INPUT 	rows: integer (0 or positive) for number of rows (/columns)
+# OUPUT		times table: printed times table with the input number of rows/columns
+# STEPS
+# 			SET a collection with elements 1..rows
+# 			SET counter to 1
+# 			WHILE counter is less than/equal to rows
+# 				ITERATE over elements of collection
+# 					MULTIPLY element by counter
+# 					replace element with result
+# 				END iterator
+#				JOIN collection with space delimiter 
+# 				PRINT string on a single line
+# 				INCREMENT counter by 1
+# 			END while
+
 #
 
 
 
 # INITIAL CODE:
-# This is the first version of code to pass the rspec tests and get all green.
+def times_table(rows)
+  if rows > 0
+    array = (1..rows).to_a
 
-
-
+    i = 1
+    while i <= rows
+      puts array.map {|e| "#{e*i} "}.join(' ')
+      i += 1
+    end
+  end
+end
 
 
 # REFACTORED CODE:
-# see: http://sourcemaking.com/refactoring/introduction-to-refactoring
 
+def times_table(rows)
+    array = (1..rows).to_a
+    i = 1
+    while i <= rows
+      puts array.map {|e| " %3d" % (e * i)}.join(' ')
+      i += 1
+    end
+end
 
-
-
-
-
-# REVIEW/REFLECT
-# Reflection is vital to learning and growth. These challenges should not be thought of as items 
-# to check off;  they are your opportunities to learn and grow as a programmer. 
-# Use the following questions to reflect on this challenge.
-# Was your strategy for solving the challenge successful?
-# What part of your strategy worked? What parts were challenging?
-# What questions did you have while coding? Did you find answers to them?
-# Are there any concepts that are still confusing to you?
-# Did you learn any new skills or ruby tricks?
 
 # INCLUDE REFLECTION HERE:
-# 
-#
-#
-#
-#
-
-
+# I tend to jump to using arrays quite often. I definitely think this problem can be solved without 
+# pushing the rows to an integer array, but I decided to go with my initial approach and I think it
+# turned out alright. Although not a requirement, I wanted to learn how ruby implements printing 
+# formatted strings--I knew how to do it in Java and wasn't sure if there was somethign similar. Although
+# it seems a bit less robust but the same type of flags/concepts. It took me a few atempts to figure out
+# how to implement it with my code but i got it working and my times table looks much prettier :)
