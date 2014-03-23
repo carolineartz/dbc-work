@@ -21,7 +21,7 @@ end
 ###BONUS
 class String
   def fun_stringitize!
-  	self.gsub!(/(\S)(\S)/) {$1 + $2.upcase}.reverse!
+    self.gsub!(/(\S)(\S)/) {$1 + $2.upcase}.reverse!
   end
 end
 
