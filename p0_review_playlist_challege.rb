@@ -1,17 +1,49 @@
 # Your awesome code goes here!
+class Song
+	attr_reader :track, :artist
+	def initialize(track, artist)
+		@track = track
+		@artist = artist
+	end
 
+	def play
+		puts 'NOW PLAYING' + ' ' + self.track + '-' + self.artist
+	end
 
+end
 
+class Playlist
+	attr_reader :list
 
+	def initialize(*songs)
+		@list = songs
+	end
 
+	def add(*songs)
+		songs.each {|song| @list << song}
+	end
 
+	def num_of_tracks
+		@list.length
+	end
 
+	def remove(song)
+		@list.delete(song)
+	end
 
+	def includes?(song)
+		true if @list.include?(song)
+	end
 
+	def play_all
+		@list.each {|song| song.play}
+	end
 
-
-
-
+	def display
+		puts 'CURRENT PLAYLIST'
+		@list.each {|song| puts song.track + '-' + song.artist}
+	end
+end
 
 
 
@@ -38,15 +70,8 @@ my_playlist.display
 
 
 ### Put your Reflection here:
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+
+# I started a version with a Music Library class and began modeling the relationship between the library, songs, and
+# playlists. I want to finish it but it got quite involved and I think it's best if i move on to the other challenges
+# and then come back and work on my extended playlist if/when there is time
+
