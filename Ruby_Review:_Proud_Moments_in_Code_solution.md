@@ -16,7 +16,7 @@ I'm proud of this code because I pushed myself (with the help of a DBC coach) to
 
 ***
 
-<pre class="brush: ruby">
+```
 # CREATE A CAR CLASS FROM USER STORIES
 # --------------------------------
 # Caroline Artz
@@ -195,4 +195,4 @@ car.get_remaining_pizzas.flatten.each {|pie| pie.display_pizza}
 # I tried to work on my 'confident code'--and coerce when in doubt (e.g., line 123 @route =
 # Array(route)), but it's definitely difficult for me as I tend to write more timid code and am not
 # 100% clear on all the ins and outs of confident code, assertive code, duck typing etc.
-</pre>
+```
