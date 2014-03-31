@@ -16,7 +16,7 @@ I'm proud of this code because I pushed myself (with the help of a DBC coach) to
 
 ***
 
-```
+```ruby
 # CREATE A CAR CLASS FROM USER STORIES
 # --------------------------------
 # Caroline Artz
