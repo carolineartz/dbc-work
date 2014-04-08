@@ -14,4 +14,4 @@ end
 puts pig_latin(ARGV)
 
 # terminal:
-# ruby pig_latin_argv.rb this is cool #=> histay is oolcay
+# ruby pig_latin.rb this is cool #=> histay is oolcay
