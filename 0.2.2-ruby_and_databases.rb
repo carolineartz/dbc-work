@@ -1,6 +1,5 @@
 require 'sqlite3'
 
-##
 
 $db = SQLite3::Database.open 'congress_poll_results.db'
 
