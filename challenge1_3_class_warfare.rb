@@ -47,7 +47,7 @@ class CreditCard
 end
 
 
-###################################### ANOTHER VERSION: DEMONSTRATING ENUMERABLES FOR DBC PHASE 0 STUDENTS##########################
+######## ANOTHER VERSION: DEMONSTRATING ENUMERABLES FOR DBC PHASE 0 STUDENTS #############
 
 class CreditCard
  
@@ -58,25 +58,25 @@ class CreditCard
  
   def check_card
     validate = @card_number.to_s.chars.collect_concat.with_index do |x, i|
-      i.odd? ? (x.to_i * 2).to_s.chars : x
+      i.odd? ? (x.to_i * 2).to_s.chars : x # didn't reverse cuz set 16 digit input; now need to isolate odd indicies 
     end
     validate.map(&:to_i).reduce(:+) % 10 == 0
   end
 end
 
 ###################################### DRIVER CODE #####################################
-card = CreditCard.new("11111111111111112") # => ArgumentError
-card = CreditCard.new("1") # => ArgumentError
+# card = CreditCard.new("11111111111111112") # => ArgumentError
+# card = CreditCard.new("1") # => ArgumentError
 
 card = CreditCard.new("4408041234567893")
-p card.check_card  # => true
+p card.check_card  == true # => true
 
 card = CreditCard.new("4408041234567892")
-p card.check_card  # => false
+p card.check_card  == false # => true
 
 
 
-####################################### REFLECTION #####################################
+####################################### REFLECTION FROM MY PHASE 0 AT DBC  #####################################
 
 #My initial thought was to reverse the digits as a string, split into an array,
 #and use the elements' index to determine which to double, a good situation to
