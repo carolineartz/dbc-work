@@ -46,6 +46,24 @@ class CreditCard
 
 end
 
+
+###################################### ANOTHER VERSION: DEMONSTRATING ENUMERABLES FOR DBC PHASE 0 STUDENTS##########################
+
+class CreditCard
+ 
+  def initialize(card_number)
+    raise ArgumentError.new("Invalid card length.") if card_number.to_s.length != 16
+    @card_number = card_number
+  end
+ 
+  def check_card
+    validate = @card_number.to_s.chars.collect_concat.with_index do |x, i|
+      i.odd? ? (x.to_i * 2).to_s.chars : x
+    end
+    validate.map(&:to_i).reduce(:+) % 10 == 0
+  end
+end
+
 ###################################### DRIVER CODE #####################################
 card = CreditCard.new("11111111111111112") # => ArgumentError
 card = CreditCard.new("1") # => ArgumentError
